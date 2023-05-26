@@ -7,28 +7,8 @@ utiliser, modifier et/ou redistribuer ce programme sous les conditions
 de la licence CeCILL diffusée sur le site "http://www.cecill.info".
 """
 
-
-def retrieve_sconfig() -> dict:
-    """
-    Retrieve system config from environment variables
-
-    :return: dict
-    """
-    pass
-
-
-def main(sconfig: dict):
-    """
-    Main function
-
-    Should be called only once.
-    Should define discord and matrix clients, then run all functions in events/
-        passing them the clients.
-    Should finally start the clients.
-    """
-    pass
-
+from src.bridge import Bridge
 
 if __name__ == "__main__":
-    sconfig = retrieve_sconfig()
-    main(sconfig)
+    bridge = Bridge()
+    bridge.start()
