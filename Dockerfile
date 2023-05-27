@@ -1,20 +1,20 @@
 FROM python:3.11
 LABEL maintainer="Aeris One <aeris@aeris-one.fr>"
 
-# Empêcher Python de stocker les fichiers .pyc
+# Disable python cache files
 ENV PYTHONDONTWRITEBYTECODE=1
 
-# Désactiver le tampon de sortie pour un meilleur logging
+# Disable buffer output
 ENV PYTHONUNBUFFERED=1
 
-# Installer les dépendances
+# Install dependencies
 COPY requirements.txt .
 RUN apt-get update && apt-get install -y libffi-dev libnacl-dev python3-dev && python -m pip install -r requirements.txt
 
 WORKDIR /app
 COPY . /app
 
-# Créer un utilisateur non-root pour lancer l'application
+# Create non-root user to launch the bridge
 RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
 USER appuser
 
