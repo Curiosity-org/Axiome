@@ -1,3 +1,2 @@
-from discord import *
-
-from matrix import *
+from .discord import *
+from .matrix import *

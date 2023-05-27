@@ -1,4 +1,4 @@
-from clients import *
+from .clients import *
 
 class Bridge:
     def __init__(self):
@@ -6,4 +6,4 @@ class Bridge:
         self.matrix_client = MatrixClient
 
     def start(self):
-        pass
+        print("Started!")
