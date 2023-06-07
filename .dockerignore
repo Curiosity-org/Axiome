@@ -1,4 +1,5 @@
 venv/
+config.yaml
 
 LICENSE.md
 LICENSE_en.md

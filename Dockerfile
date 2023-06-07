@@ -8,8 +8,9 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # Install dependencies
+RUN apt-get update && apt-get install -y libffi-dev libnacl-dev python3-dev
 COPY requirements.txt .
-RUN apt-get update && apt-get install -y libffi-dev libnacl-dev python3-dev && python -m pip install -r requirements.txt
+RUN python -m pip install -r requirements.txt
 
 WORKDIR /app
 COPY . /app

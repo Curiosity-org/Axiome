@@ -1,4 +1,5 @@
 from .clients import *
+from .configuration import get_config
 
 class Bridge:
     def __init__(self):
@@ -7,3 +8,4 @@ class Bridge:
 
     def start(self):
         print("Started!")
+        print(get_config('test', 'value'))
